@@ -1,65 +1,59 @@
+# Machine Learning CS7641
 
-# Assignment 2 - Randomized Optimization
+* #### Student: Phat Nguyen
+* #### GTID: pnguyen340
 
-The code for this assignment chooses three toy problems, but there are other options available in _ABAGAIL_. 
+## Assignment 2
 
-## General
+Please follow the below steps if you want to reproduce my results:
 
-If you are running this code in OS X you should consider downloading Jython directly. The version provided by homebrew does mot seem to work as expected for this code.
+0. Follow the instructions to cython: https://www.jython.org/installation
 
-## Data
-
-The data loading code expects datasets to be stored in "./data".
-
-Because _ABAGAIL_ does not implement cross validation some work must be done on the dataset before the other code can
-be run. The data can be generated via 
+1. Clone the code by the following command
 
 ```
-python run_experiment.py --dump_data
+  git clone https://github.com/PhatNguyen39/CS7641-ML
 ```
- 
-Be sure to run this before running any of the experiments.
+  
+2. Change directory
 
-## Output
-
-Output CSVs and images are written to `./output` and `./output/images` respectively. Sub-folders will be created for
-each toy problem (`CONTPEAKS`, `FLIPFLOP`, `TSP`) and the neural network from the _Supervised Learning Project_ (`NN_OUTPUT`, `NN`).
-
-If these folders do not exist the experiments module will attempt to create them.
-
-## Necessary edits for the Neural Network Problem
-
-In order to get the `NN-*` scripts to run you must edit each and make sure these values make sense for your data set:
 ```
-INPUT_LAYER = 8
-HIDDEN_LAYER1 = 16
-HIDDEN_LAYER2 = 16
-OUTPUT_LAYER = 1
+  cd assignment2/
 ```
-In this case, there are 8 features and it is a binary classification problem and as a result `INPUT_LAYER` is `8` and `OUTPUT_LAYER` is `1`. If you had, say, 20 features you would set `INPUT_LAYER` to 20.
 
-## Running Experiments
+3. Create conda environment
 
-Each experiment can be run as a separate script. Running the actual optimization algorithms to generate data requires
-the use of Jython.
+```
+  conda create -n cs7641 python=3.9
+```
 
-For the three toy problems, run:
- - continuoutpeaks.py
- - flipflop.py
- - tsp.py
+4. Install libraries
 
-For the neural network problem, run:
- - NN-Backprop.py
- - NN-GA.py
- - NN-RHC.py
- - NN-SA.py
+```
+  pip install -r requirements.txt
+```
 
-## Graphing
+5. Run experiments for each algorithm as follows
 
-The `plotting.py` script takes care of all the plotting. Since the files output from the scripts above follow a common
-naming scheme it will determine the problem, algorithm, and parameters as needed and write the output to sub-folders in
-`./output/images`. This _must_ be run via python, specifically an install of python that has the requirements from
-`requirements.txt` installed.
+a. Part 1: Optimization problems and randomized algorithms
 
-In addition to the images, a csv file of the best parameters per problem/algorithm pair is written to
-`./output/best_results.csv`
+```
+  jython continuouspeaks.py
+  jython tsp.py
+  jython knapsack.py
+```
+
+b. Part 2: Neural Network
+
+```
+  jython NN-Backprop.py
+  jython NN-RHC.py
+  jython NN-SA.py
+  jython NN-GA.py
+```
+
+6. Convert the results stored in CSV file to the figures
+
+```
+  python plotting.py
+```
