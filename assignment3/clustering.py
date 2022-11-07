@@ -163,42 +163,40 @@ for k in clusters:
 fit_time = pd.DataFrame(fit_time_dict)
 fit_time.to_csv(out + "Clustering_fit_time.csv", index=False)
 
-# SSE = (-pd.DataFrame(SSE)).T
-# SSE.rename(columns=lambda x: x + ' SSE (left)', inplace=True)
-# ll = pd.DataFrame(ll).T
-# ll.rename(columns=lambda x: x + ' log-likelihood', inplace=True)
-#
-# SS = pd.DataFrame(SS)
-# acc = pd.DataFrame(acc)
-# adjMI = pd.DataFrame(adjMI)
-#
-# SSE.to_csv(out + 'SSE.csv')
-# ll.to_csv(out + 'loglikelihood.csv')
-#
-# temp = pd.json_normalize(SS.loc['CreditCardF']).T.reindex(['GMM', 'Kmeans'])
-# temp.columns = SS.columns
-# temp.to_csv(out + 'CreditCardF Silhouette.csv')
-#
-# temp = pd.json_normalize(SS.loc['BreastC']).T.reindex(['GMM', 'Kmeans'])
-# temp.columns = SS.columns
-# temp.to_csv(out + 'BreastC Silhouette.csv')
-#
-# temp = pd.json_normalize(acc.loc['CreditCardF']).T.reindex(['GMM', 'Kmeans'])
-# temp.columns = SS.columns
-# temp.to_csv(out + 'CreditCardF acc.csv')
-#
-# temp = pd.json_normalize(acc.loc['BreastC']).T.reindex(['GMM', 'Kmeans'])
-# temp.columns = SS.columns
-# temp.to_csv(out + 'BreastC acc.csv')
-#
-# temp = pd.json_normalize(adjMI.loc['CreditCardF']).T.reindex(['GMM', 'Kmeans'])
-# temp.columns = SS.columns
-# temp.to_csv(out + 'CreditCardF adjMI.csv')
-#
-# temp = pd.json_normalize(adjMI.loc['BreastC']).T.reindex(['GMM', 'Kmeans'])
-# temp.columns = SS.columns
-# temp.to_csv(out + 'BreastC adjMI.csv')
+SSE = (-pd.DataFrame(SSE)).T
+SSE.rename(columns=lambda x: x + ' SSE (left)', inplace=True)
+ll = pd.DataFrame(ll).T
+ll.rename(columns=lambda x: x + ' log-likelihood', inplace=True)
 
+SS = pd.DataFrame(SS)
+acc = pd.DataFrame(acc)
+adjMI = pd.DataFrame(adjMI)
 
+SSE.to_csv(out + 'SSE.csv')
+ll.to_csv(out + 'loglikelihood.csv')
+
+temp = pd.json_normalize(SS.loc['CreditCardF']).T.reindex(['GMM', 'Kmeans'])
+temp.columns = SS.columns
+temp.to_csv(out + 'CreditCardF Silhouette.csv')
+
+temp = pd.json_normalize(SS.loc['BreastC']).T.reindex(['GMM', 'Kmeans'])
+temp.columns = SS.columns
+temp.to_csv(out + 'BreastC Silhouette.csv')
+
+temp = pd.json_normalize(acc.loc['CreditCardF']).T.reindex(['GMM', 'Kmeans'])
+temp.columns = SS.columns
+temp.to_csv(out + 'CreditCardF acc.csv')
+
+temp = pd.json_normalize(acc.loc['BreastC']).T.reindex(['GMM', 'Kmeans'])
+temp.columns = SS.columns
+temp.to_csv(out + 'BreastC acc.csv')
+
+temp = pd.json_normalize(adjMI.loc['CreditCardF']).T.reindex(['GMM', 'Kmeans'])
+temp.columns = SS.columns
+temp.to_csv(out + 'CreditCardF adjMI.csv')
+
+temp = pd.json_normalize(adjMI.loc['BreastC']).T.reindex(['GMM', 'Kmeans'])
+temp.columns = SS.columns
+temp.to_csv(out + 'BreastC adjMI.csv')
 
 
