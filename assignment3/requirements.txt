@@ -1,0 +1,6 @@
+sklearn
+pandas
+matplotlib
+plotly
+tables
+notebook
