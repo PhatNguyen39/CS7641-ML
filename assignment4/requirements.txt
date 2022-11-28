@@ -1,0 +1,11 @@
+sklearn
+pandas
+matplotlib
+plotly
+tables
+notebook
+gym
+pymdptoolbox
+mdptoolbox-hiive
+tqdm
+seaborn
