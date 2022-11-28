@@ -21,7 +21,7 @@ eight = generate_random_map(8)
 np.random.seed(340)
 twenty_five = generate_random_map(25)
 
-OUTPUT_DIR = "../outputs/trained_policies_new"
+OUTPUT_DIR = "../outputs/trained_policies"
 makedirs(OUTPUT_DIR, exist_ok=True)
 
 
