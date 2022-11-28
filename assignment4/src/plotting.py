@@ -561,7 +561,7 @@ def plot_convergence_forest_management_reward_time_policies_vs_iterations(map_si
 
 
 if __name__ == '__main__':
-    INPUT_DIR = "../outputs/trained_policies_new"
+    INPUT_DIR = "../outputs/trained_policies"
 
     if not os.path.exists("../outputs/maps.json"):
         print("maps.json not found")
