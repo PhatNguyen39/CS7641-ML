@@ -13,7 +13,7 @@ import argparse
 
 np.random.seed(340)
 
-OUTPUT_DIR = "../outputs/trained_policies_new"
+OUTPUT_DIR = "../outputs/trained_policies"
 makedirs(OUTPUT_DIR, exist_ok=True)
 
 
